@@ -46,7 +46,8 @@ module.exports = {
     "@typescript-eslint/explicit-module-boundary-types": "off",
     "@typescript-eslint/ban-ts-comment": "off",
     "@typescript-eslint/ban-ts-ignore": "off",
-    "@typescript-eslint/no-explicit-any": "off",
+    "@typescript-eslint/no-explicit-any": "error",
+    "@typescript-eslint/no-var-requires": "warn",
     "@typescript-eslint/ban-types": [
       "error",
       {
@@ -68,5 +69,6 @@ module.exports = {
         arrowParens: "avoid",
       },
     ],
+    "require-atomic-updates": "warn",
   },
 };
