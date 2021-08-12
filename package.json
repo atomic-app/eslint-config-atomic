@@ -1,0 +1,23 @@
+{
+  "name": "eslint-config-atomic",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/atomic-app/eslint-config-atomic",
+  "author": "Greg Brown",
+  "license": "MIT",
+  "private": false,
+  "dependencies": {
+    "@typescript-eslint/eslint-plugin": "^4.29.1",
+    "@typescript-eslint/parser": "^4.29.1",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-no-async-foreach": "^0.1.1",
+    "eslint-plugin-no-only-tests": "^2.6.0",
+    "eslint-plugin-prettier": "^3.4.0",
+    "prettier-eslint": "^13.0.0"
+  },
+  "peerDependencies": {
+    "babel-eslint": "^10.1.0",
+    "eslint": "^7.32.0",
+    "prettier": "^2.3.2"
+  }
+}
