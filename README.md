@@ -1,5 +1,7 @@
 # eslint-config-atomic
 
+[![NPM](https://img.shields.io/npm/v/react-object-input.svg)](https://www.npmjs.com/package/react-object-input)
+
 Shared linting and prettier config for atomic packages
 
 ### Installation
