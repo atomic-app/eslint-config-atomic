@@ -16,15 +16,7 @@ in your `.eslintrc` file:
 }
 ```
 
-### Project Setup
-
-1. run `yarn`
-
 ### Publish a new version
 
-1. Increment the version in `package.json` according to [semver](https://semver.org/)
-2. Push the results to a branch and submit a PR
-
-### Todo
-
-- Proper versioning and pinning
+1. Update the version in package.json
+2. Push changes
