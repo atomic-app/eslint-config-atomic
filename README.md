@@ -7,18 +7,21 @@ Shared linting and prettier config for atomic packages
 ### Installation
 
 ```
-yarn add -ED https://github.com/atomic-app/eslint-config-atomic
+yarn add -ED @atomic-tools/eslint-config-atomic
 ```
 
 in your `.eslintrc` file:
 
 ```
 {
-  "extends": ["atomic"]
+  "extends": ["@atomic-tools/atomic"]
 }
 ```
 
-### Publish a new version
+### To update this config
 
-1. Update the version in package.json
-2. Push changes
+1. Install dependencies and update the shared config as needed
+2. Update the version appropriately in package.json
+3. Commit and push changes
+
+Whenever the version in package.json is bumped, a new version is published automatically to [npm](https://www.npmjs.com/package/@atomic-tools/eslint-config-atomic). See [.github/workflows/main.yml](.github/workflows/main.yml)
