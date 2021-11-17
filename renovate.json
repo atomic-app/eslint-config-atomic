@@ -1,0 +1,29 @@
+{
+  "extends": ["config:base"],
+  "ignorePaths": []
+  "automerge": false,
+  "rebaseWhen": "conflicted",
+  "addLabels": ["renovate"],
+  "minor": {
+    "labels": ["automerge"]
+  },
+  "packageRules": [
+    {
+      "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
+      "addLabels": ["automerge"]
+    },
+    {
+      "matchDepTypes": ["devDependencies"],
+      "addLabels": ["automerge"]
+    }
+  ],
+  "updateLockFiles": true,
+  "stabilityDays": 3,
+  "prCreation": "not-pending",
+  "prHourlyLimit": 1,
+  "masterIssue": true,
+  "baseBranches": ["main"],
+  "ignoreDeps": [],
+  "schedule": ["every weekend"],
+  "dependencyDashboard": false
+}
