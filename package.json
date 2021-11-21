@@ -1,6 +1,6 @@
 {
   "name": "@atomic-tools/eslint-config-atomic",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "main": "index.js",
   "repository": "https://github.com/atomic-app/eslint-config-atomic",
   "author": "Greg Brown",
@@ -18,13 +18,7 @@
     "typescript": "^4.4.4"
   },
   "peerDependencies": {
-    "eslint": ">= 8.0.0",
-    "eslint-config-prettier": "^8.3.0",
-    "eslint-plugin-prettier": "^4.0.0",
-    "prettier": "^2.4.0"
-  },
-  "resolutions": {
-    "ansi-regex": "^5.0.1",
-    "eslint-plugin-prettier": "^4.0.0"
+    "eslint": ">=8.2.0",
+    "prettier": ">=2.4.1"
   }
 }
