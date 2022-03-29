@@ -1,6 +1,6 @@
 {
   "extends": ["config:base"],
-  "ignorePaths": []
+  "ignorePaths": [],
   "automerge": false,
   "rebaseWhen": "conflicted",
   "addLabels": ["renovate"],
