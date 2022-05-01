@@ -30,9 +30,10 @@ module.exports = {
         checkForEach: true,
       },
     ],
-    "no-unused-expressions": "error",
-    "no-shadow-restricted-names": "error",
     "no-only-tests/no-only-tests": "error",
+    "no-shadow-restricted-names": "error",
+    "no-throw-literal": "error",
+    "no-unused-expressions": "error",
     "@typescript-eslint/no-floating-promises": "error",
     "@typescript-eslint/no-unused-vars": "error",
     "@typescript-eslint/require-array-sort-compare": [
