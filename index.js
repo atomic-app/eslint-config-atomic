@@ -21,7 +21,12 @@ module.exports = {
     "plugin:prettier/recommended",
   ],
   rules: {
-    "array-callback-return": ["error", { checkForEach: true }],
+    "array-callback-return": [
+      "error",
+      {
+        checkForEach: true,
+      },
+    ],
     eqeqeq: "error",
     "no-async-foreach/no-async-foreach": "error",
     "no-console": "off",
@@ -45,7 +50,13 @@ module.exports = {
     "@typescript-eslint/ban-ts-ignore": "off",
     "@typescript-eslint/ban-types": [
       "error",
-      { types: { "{}": false, object: false }, extendDefaults: true },
+      {
+        types: {
+          "{}": false,
+          object: false,
+        },
+        extendDefaults: true,
+      },
     ],
     "@typescript-eslint/explicit-function-return-type": "off",
     "@typescript-eslint/explicit-module-boundary-types": "off",
@@ -57,7 +68,9 @@ module.exports = {
     "@typescript-eslint/prefer-nullish-coalescing": "error",
     "@typescript-eslint/require-array-sort-compare": [
       "error",
-      { ignoreStringArrays: true },
+      {
+        ignoreStringArrays: true,
+      },
     ],
   },
 };
