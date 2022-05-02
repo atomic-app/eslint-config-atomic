@@ -21,46 +21,15 @@ module.exports = {
     "plugin:prettier/recommended",
   ],
   rules: {
-    "no-shadow": "error",
-    "no-async-foreach/no-async-foreach": "error",
+    "array-callback-return": ["error", { checkForEach: true }],
     eqeqeq: "error",
-    "array-callback-return": [
-      "error",
-      {
-        checkForEach: true,
-      },
-    ],
+    "no-async-foreach/no-async-foreach": "error",
+    "no-console": "off",
     "no-only-tests/no-only-tests": "error",
     "no-shadow-restricted-names": "error",
+    "no-shadow": "error",
     "no-throw-literal": "error",
     "no-unused-expressions": "error",
-    "@typescript-eslint/no-floating-promises": "error",
-    "@typescript-eslint/no-unused-vars": "error",
-    "@typescript-eslint/require-array-sort-compare": [
-      "error",
-      {
-        ignoreStringArrays: true,
-      },
-    ],
-    "@typescript-eslint/member-delimiter-style": "off",
-    "@typescript-eslint/explicit-function-return-type": "off",
-    "@typescript-eslint/explicit-module-boundary-types": "off",
-    "@typescript-eslint/ban-ts-comment": "off",
-    "@typescript-eslint/ban-ts-ignore": "off",
-    "@typescript-eslint/no-explicit-any": "error",
-    "@typescript-eslint/no-var-requires": "error",
-    "@typescript-eslint/prefer-nullish-coalescing": "error",
-    "@typescript-eslint/ban-types": [
-      "error",
-      {
-        types: {
-          "{}": false,
-          object: false,
-        },
-        extendDefaults: true,
-      },
-    ],
-    "no-console": "off",
     "prettier/prettier": [
       "error",
       {
@@ -72,5 +41,23 @@ module.exports = {
       },
     ],
     "require-atomic-updates": "error",
+    "@typescript-eslint/ban-ts-comment": "off",
+    "@typescript-eslint/ban-ts-ignore": "off",
+    "@typescript-eslint/ban-types": [
+      "error",
+      { types: { "{}": false, object: false }, extendDefaults: true },
+    ],
+    "@typescript-eslint/explicit-function-return-type": "off",
+    "@typescript-eslint/explicit-module-boundary-types": "off",
+    "@typescript-eslint/member-delimiter-style": "off",
+    "@typescript-eslint/no-explicit-any": "error",
+    "@typescript-eslint/no-floating-promises": "error",
+    "@typescript-eslint/no-unused-vars": "error",
+    "@typescript-eslint/no-var-requires": "error",
+    "@typescript-eslint/prefer-nullish-coalescing": "error",
+    "@typescript-eslint/require-array-sort-compare": [
+      "error",
+      { ignoreStringArrays: true },
+    ],
   },
 };
