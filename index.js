@@ -10,6 +10,7 @@ module.exports = {
     "no-async-foreach",
     "prettier",
     "no-only-tests",
+    "functional"
   ],
   parserOptions: {
     project: "./tsconfig.json",
@@ -21,6 +22,13 @@ module.exports = {
     "plugin:prettier/recommended",
   ],
   rules: {
+    "functional/immutable-data": [
+      "warn",
+      {
+        "ignoreImmediateMutation": true,
+        "ignoreClass": true
+      }
+    ],
     "array-callback-return": [
       "error",
       {
