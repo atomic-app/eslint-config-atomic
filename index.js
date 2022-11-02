@@ -22,7 +22,13 @@ module.exports = {
     "plugin:prettier/recommended",
   ],
   rules: {
-    "functional/immutable-data": "warn",
+    "functional/immutable-data": [
+      "warn",
+      {
+        "ignoreImmediateMutation": true,
+        "ignoreClass": true
+      }
+    ],
     "array-callback-return": [
       "error",
       {
