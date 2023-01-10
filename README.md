@@ -2,7 +2,7 @@
 
 [![NPM](https://img.shields.io/npm/v/@atomic-tools/eslint-config-atomic.svg)](https://www.npmjs.com/package/@atomic-tools/eslint-config-atomic)
 
-Shared linting and prettier config for atomic packages
+Shared linting and prettier config used by the Atomic.io engineering team.
 
 ### Installation
 
