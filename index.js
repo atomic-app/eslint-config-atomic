@@ -10,7 +10,7 @@ module.exports = {
     "no-async-foreach",
     "prettier",
     "no-only-tests",
-    "functional"
+    "functional",
   ],
   parserOptions: {
     project: "./tsconfig.json",
@@ -25,9 +25,9 @@ module.exports = {
     "functional/immutable-data": [
       "warn",
       {
-        "ignoreImmediateMutation": true,
-        "ignoreClass": true
-      }
+        ignoreImmediateMutation: true,
+        ignoreClass: true,
+      },
     ],
     "array-callback-return": [
       "error",
@@ -71,6 +71,7 @@ module.exports = {
     "@typescript-eslint/member-delimiter-style": "off",
     "@typescript-eslint/no-explicit-any": "error",
     "@typescript-eslint/no-floating-promises": "error",
+    "@typescript-eslint/no-unnecessary-condition": "warn",
     "@typescript-eslint/no-unused-vars": "error",
     "@typescript-eslint/no-var-requires": "error",
     "@typescript-eslint/prefer-nullish-coalescing": "error",
