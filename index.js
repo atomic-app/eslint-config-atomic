@@ -26,7 +26,7 @@ module.exports = {
       "warn",
       {
         ignoreImmediateMutation: true,
-        ignoreClass: true,
+        ignoreClasses: true,
       },
     ],
     "array-callback-return": [
