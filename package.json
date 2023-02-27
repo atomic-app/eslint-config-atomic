@@ -20,5 +20,8 @@
   },
   "devDependencies": {
     "auto-approve-action": "hmarr/auto-approve-action"
+  },
+  "scripts": {
+    "postversion": "git push && git push --tags && echo 'Bumped the version' "
   }
 }
