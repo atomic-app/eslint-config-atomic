@@ -15,6 +15,9 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 16
+      - run: |
+          git config --global user.email "nobody@atomic.io"
+          git config --global user.name "Atomic Github Action"
       - run: yarn
       - if: github.ref_name == 'main'
         name: version release
