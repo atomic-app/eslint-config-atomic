@@ -27,6 +27,7 @@ module.exports = {
       {
         ignoreImmediateMutation: true,
         ignoreClasses: true,
+        ignorePattern: ["mut_"]
       },
     ],
     "array-callback-return": [
