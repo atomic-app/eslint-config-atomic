@@ -2,8 +2,6 @@ on:
   push:
     branches:
       - main
-    tags:
-      - v*
 
 jobs:
   build:
@@ -26,12 +24,3 @@ jobs:
         uses: JS-DevTools/npm-publish@v1
         with:
           token: ${{ secrets.NPM_TOKEN }}
-
-  ## auto-approve for renovate
-  auto-approve:
-    if: github.actor == 'dependabot[bot]' || github.actor == 'renovate[bot]'
-    runs-on: ubuntu-latest
-    steps:
-      - uses: hmarr/auto-approve-action@v2.4.0
-        with:
-          github-token: "${{ secrets.GITHUB_TOKEN }}"
