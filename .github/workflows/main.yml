@@ -21,6 +21,6 @@ jobs:
         name: version release ${{github.ref}}
         run: yarn version --new-version patch
       - if: ${{github.ref_name == 'main'}}
-        uses: JS-DevTools/npm-publish@v1
+        uses: JS-DevTools/npm-publish@v2
         with:
           token: ${{ secrets.NPM_TOKEN }}
