@@ -12,14 +12,14 @@ jobs:
           token: "${{ secrets.GITHUB_TOKEN }}"
       - uses: actions/setup-node@v3
         with:
-          node-version: 16
+          node-version: 20
       - run: |
           git config --global user.email "nobody@atomic.io"
           git config --global user.name "Atomic Platform"
       - run: yarn
-      - if: ${{github.ref_name == 'main'}}
-        name: version release ${{github.ref}}
-        run: yarn version --new-version patch
+      # - if: ${{github.ref_name == 'main'}}
+      #   name: version release ${{github.ref}}
+      #   run: yarn version --new-version patch
       - if: ${{github.ref_name == 'main'}}
         uses: JS-DevTools/npm-publish@v1
         with:
