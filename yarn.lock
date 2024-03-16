@@ -554,10 +554,10 @@ eslint-config-prettier@8.8.0:
   resolved "https://registry.yarnpkg.com/eslint-config-prettier/-/eslint-config-prettier-8.8.0.tgz#bfda738d412adc917fd7b038857110efe98c9348"
   integrity sha512-wLbQiFre3tdGgpDv67NQKnJuTlcUVYHas3k+DZCc2U2BadthoEY4B7hLPvAxaqdyOGCzuLfii2fqGph10va7oA==
 
-eslint-plugin-functional@5.0.7:
-  version "5.0.7"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-functional/-/eslint-plugin-functional-5.0.7.tgz#a87724c346d2c0791aa9549918fef9a649502c53"
-  integrity sha512-NJqwvlGvpnjphScwArGAjCWnHWIE7RQfWvl0PYeBn8i9HVzrD8V3ZGt0DpghCzZrFW7B4V644OKB9ZN3SPofFA==
+eslint-plugin-functional@5.0.8:
+  version "5.0.8"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-functional/-/eslint-plugin-functional-5.0.8.tgz#3b49718b2a717f196a3d077f970b6b698ccbe925"
+  integrity sha512-rXC5THzqqSXUrbTBG+dLLYn10Af0C9Df+N4TT3onPrOz+kgInshLJdRAvEcV+8HHNsZyDrNLcgWh5jzVaAnleQ==
   dependencies:
     "@typescript-eslint/type-utils" "^5.50.0"
     "@typescript-eslint/utils" "^5.50.0"
