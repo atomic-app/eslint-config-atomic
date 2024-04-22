@@ -1,6 +1,6 @@
 {
   "name": "@atomic-tools/eslint-config-atomic",
-  "version": "1.4.0",
+  "version": "1.4.1",
   "main": "index.js",
   "repository": "https://github.com/atomic-app/eslint-config-atomic",
   "author": "Greg Brown",
@@ -9,14 +9,14 @@
   "dependencies": {
     "@typescript-eslint/eslint-plugin": "5.56.0",
     "@typescript-eslint/parser": "5.56.0",
-    "eslint": "8.36.0",
-    "eslint-config-prettier": "8.8.0",
-    "eslint-plugin-functional": "5.0.7",
+    "eslint": "8.57.0",
+    "eslint-config-prettier": "8.10.0",
+    "eslint-plugin-functional": "6.5.1",
     "eslint-plugin-no-async-foreach": "0.1.1",
     "eslint-plugin-no-only-tests": "3.1.0",
-    "eslint-plugin-prettier": "4.2.1",
-    "prettier": "2.8.6",
-    "typescript": "5.4.2"
+    "eslint-plugin-prettier": "5.1.3",
+    "prettier": "3.2.5",
+    "typescript": "5.4.5"
   },
   "devDependencies": {
     "auto-approve-action": "hmarr/auto-approve-action"
