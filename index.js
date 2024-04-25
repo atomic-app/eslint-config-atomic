@@ -52,6 +52,7 @@ module.exports = {
         singleQuote: true,
         trailingComma: "none",
         arrowParens: "avoid",
+        experimentalTernaries: false
       },
     ],
     "require-atomic-updates": "error",
