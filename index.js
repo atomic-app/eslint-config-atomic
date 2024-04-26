@@ -27,7 +27,7 @@ module.exports = {
       {
         ignoreImmediateMutation: true,
         ignoreClasses: true,
-        ignorePattern: ["mut_"]
+        ignoreIdentifierPattern: ["mut_"],
       },
     ],
     "array-callback-return": [
@@ -52,7 +52,7 @@ module.exports = {
         singleQuote: true,
         trailingComma: "none",
         arrowParens: "avoid",
-        experimentalTernaries: false
+        experimentalTernaries: false,
       },
     ],
     "require-atomic-updates": "error",
@@ -84,4 +84,4 @@ module.exports = {
       },
     ],
   },
-};
+}
