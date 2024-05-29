@@ -22,11 +22,13 @@ jobs:
         name: create release version ${{github.ref}}
         run: |
           echo "actor ${{github.actor}}"
+          jq -r '.version' package.json
           ## do the release bump
-          CURRENT_VERSION=$(npm pkg get version --raw)
-          git checkout -b version-${CURRENT_VERSION}
-          yarn version --new-version patch
-          git log
+          # yarn version --new-version patch
+
+          # git checkout -b version-${CURRENT_VERSION}
+
+          git push && git push --tags && echo 'Bumped the version'
       # - if: ${{github.ref_name == 'main'}}
       #   uses: JS-DevTools/npm-publish@v1
       #   with:
