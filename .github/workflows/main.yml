@@ -43,7 +43,7 @@ jobs:
           echo "VERSION: ${NEW_VERSION}"
           git push origin ${PR_BRANCH_NAME} && git push origin v${NEW_VERSION} && echo 'Bumped the version'
 
-          gh pr create -B main -H ${PR_BRANCH_NAME} --label automerge --title "Release version ${NEW_VERSION}" --body 'Created by Github action'
+          gh pr create -B main -H ${PR_BRANCH_NAME} --label automerge --reviewer 'github-actions[bot]' --title "Release version ${NEW_VERSION}" --body 'Created by Github action'
       - if: ${{github.ref_name == 'main' && github.actor == 'kodiakhq[bot]'}}
         uses: JS-DevTools/npm-publish@v1
         with:
