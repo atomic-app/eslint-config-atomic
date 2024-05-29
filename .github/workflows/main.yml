@@ -25,15 +25,15 @@ jobs:
         run: |
           echo "actor ${{github.actor}}"
 
+          git checkout -b version-release-${{github.sha}}
+
           ## do the release bump
           yarn version --new-version patch
-          NEW_VERSION=$( jq -r '.version' package.json)
-          git checkout -b version-${NEW_VERSION}
-          git status
-          git log
+          git push && git push --tags && echo 'Bumped the version'
 
+          NEW_VERSION=$( jq -r '.version' package.json)
           gh pr create -B main -H version-${NEW_VERSION} --title "Release version ${NEW_VERSION}" --body 'Created by Github action'
-          ##git push && git push --tags && echo 'Bumped the version'
+
       # - if: ${{github.ref_name == 'main'}}
       #   uses: JS-DevTools/npm-publish@v1
       #   with:
