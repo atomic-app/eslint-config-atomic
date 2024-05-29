@@ -16,14 +16,15 @@ jobs:
       - run: |
           git config --global user.email "nobody@atomic.io"
           git config --global user.name "Atomic Platform"
-          git remote -v
+          git config --add push.autoSetupRemote true
       - run: yarn
       - if: ${{github.ref_name == 'main'}}
         name: create release version ${{github.ref}}
         run: |
           echo "actor ${{github.actor}}"
           ## do the release bump
-          git checkout -b version-$(npm pkg get version --raw)
+          CURRENT_VERSION=$(npm pkg get version --raw)
+          git checkout -b version-${CURRENT_VERSION}
           yarn version --new-version patch
           git log
       # - if: ${{github.ref_name == 'main'}}
