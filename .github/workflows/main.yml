@@ -35,12 +35,12 @@ jobs:
 
           ## do the release bump
           yarn version --new-version patch
-
+          git status
           NEW_VERSION=$(jq -r '.version' package.json)
           PR_BRANCH_NAME=version-release-${NEW_VERSION}
           git branch -m version-release-${{github.sha}} ${PR_BRANCH_NAME}
 
-          git push origin main && git push origin ${NEW_VERSION} && echo 'Bumped the version'
+          git push && git push --tags && echo 'Bumped the version'
 
           gh pr create -B main -H ${PR_BRANCH_NAME} --label automerge --title "Release version ${NEW_VERSION}" --body 'Created by Github action'
       - if: ${{github.ref_name == 'main'}} && ${{github.actor == 'kodiakhq[bot]'}}
