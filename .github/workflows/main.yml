@@ -23,22 +23,26 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
+          echo "Actor ${{github.actor}}, event ${{ github.event_name }}"
           COMMIT_MSG=$(git show -s --format=%B '${{github.sha}}' | grep "^Release version" || echo "")
           if [ -n "${COMMIT_MSG}" ]; then
             echo "Don't need to create version here"
             exit 0
           fi
 
-          BRANCH_NAME=version-release-${{github.sha}}
-          git checkout -b ${BRANCH_NAME}
+          ## placeholder
+          git checkout -b version-release-${{github.sha}}
 
           ## do the release bump
           yarn version --new-version patch
-          git push && git push --tags && echo 'Bumped the version'
 
           NEW_VERSION=$(jq -r '.version' package.json)
+          git branch -m version-release-${{github.sha}} version-release-${NEW_VERSION}
+
+          git push origin main && git push origin ${NEW_VERSION} && echo 'Bumped the version'
+
           gh pr create -B main -H ${BRANCH_NAME} --label automerge --title "Release version ${NEW_VERSION}" --body 'Created by Github action'
-      # - if: ${{github.ref_name == 'main'}} && ${{github.actor == 'kodiakhq[bot]'}}
-      #   uses: JS-DevTools/npm-publish@v1
-      #   with:
-      #     token: ${{ secrets.NPM_TOKEN }}
+      - if: ${{github.ref_name == 'main'}} && ${{github.actor == 'kodiakhq[bot]'}}
+        uses: JS-DevTools/npm-publish@v1
+        with:
+          token: ${{ secrets.NPM_TOKEN }}
