@@ -18,9 +18,9 @@ jobs:
           git config --global user.name "Atomic Platform"
           git remote -v
       - run: yarn
-      # - if: ${{github.ref_name == 'main'}}
-      #   name: version release ${{github.ref}}
-      #   run: yarn version --new-version patch
+      - if: ${{github.ref_name == 'main'}}
+        name: version release ${{github.ref}}
+        run: yarn version --new-version patch
       # - if: ${{github.ref_name == 'main'}}
       #   uses: JS-DevTools/npm-publish@v1
       #   with:
