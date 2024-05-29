@@ -7,7 +7,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
         with:
           token: "${{ secrets.GITHUB_TOKEN }}"
       - uses: actions/setup-node@v3
@@ -16,11 +16,12 @@ jobs:
       - run: |
           git config --global user.email "nobody@atomic.io"
           git config --global user.name "Atomic Platform"
+          git remote -v
       - run: yarn
       # - if: ${{github.ref_name == 'main'}}
       #   name: version release ${{github.ref}}
       #   run: yarn version --new-version patch
-      - if: ${{github.ref_name == 'main'}}
-        uses: JS-DevTools/npm-publish@v1
-        with:
-          token: ${{ secrets.NPM_TOKEN }}
+      # - if: ${{github.ref_name == 'main'}}
+      #   uses: JS-DevTools/npm-publish@v1
+      #   with:
+      #     token: ${{ secrets.NPM_TOKEN }}
