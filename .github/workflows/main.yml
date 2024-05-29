@@ -37,8 +37,8 @@ jobs:
           git push && git push --tags && echo 'Bumped the version'
 
           NEW_VERSION=$(jq -r '.version' package.json)
-          gh pr create -B main -H ${BRANCH_NAME} --title "Release version ${NEW_VERSION}" --body 'Created by Github action'
-      # - if: ${{github.ref_name == 'main'}}
+          gh pr create -B main -H ${BRANCH_NAME} --label automerge --title "Release version ${NEW_VERSION}" --body 'Created by Github action'
+      # - if: ${{github.ref_name == 'main'}} && ${{github.actor == 'github-actions'}}
       #   uses: JS-DevTools/npm-publish@v1
       #   with:
       #     token: ${{ secrets.NPM_TOKEN }}
