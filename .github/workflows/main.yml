@@ -20,6 +20,8 @@ jobs:
       - run: yarn
       - if: ${{github.ref_name == 'main'}}
         name: create release version ${{github.ref}}
+        env:
+          GH_TOKEN: ${{ github.token }}
         run: |
           echo "actor ${{github.actor}}"
 
