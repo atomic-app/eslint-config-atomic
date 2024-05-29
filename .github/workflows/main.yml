@@ -30,20 +30,18 @@ jobs:
             exit 0
           fi
 
-          ## placeholder
-          git checkout -b version-release-${{github.sha}}
+          PR_BRANCH_NAME=version-release-${{github.sha}}
+
+          git checkout -b ${PR_BRANCH_NAME}
 
           ## do the release bump
           yarn version --new-version patch
-          git status
-          NEW_VERSION=$(jq -r '.version' package.json)
-          PR_BRANCH_NAME=version-release-${NEW_VERSION}
-          git branch -m version-release-${{github.sha}} ${PR_BRANCH_NAME}
 
+          NEW_VERSION=$(jq -r '.version' package.json)
           git push origin main && git push origin v${NEW_VERSION} && echo 'Bumped the version'
 
           gh pr create -B main -H ${PR_BRANCH_NAME} --label automerge --title "Release version ${NEW_VERSION}" --body 'Created by Github action'
-      - if: ${{github.ref_name == 'main'}} && ${{github.actor != 'kodiakhq[bot]'}}
+      - if: ${{github.ref_name == 'main'}} && ${{github.actor == 'kodiakhq[bot]'}}
         uses: JS-DevTools/npm-publish@v1
         with:
           token: ${{ secrets.NPM_TOKEN }}
