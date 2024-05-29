@@ -24,6 +24,11 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: |
           echo "actor ${{github.actor}}"
+          if [ "${{github.actor}}" == "github-actions" ]; then
+            echo "Don't need to create version here"
+            exit 0
+          fi
+
           BRANCH_NAME=version-release-${{github.sha}}
           git checkout -b ${BRANCH_NAME}
 
@@ -33,7 +38,6 @@ jobs:
 
           NEW_VERSION=$(jq -r '.version' package.json)
           gh pr create -B main -H ${BRANCH_NAME} --title "Release version ${NEW_VERSION}" --body 'Created by Github action'
-
       # - if: ${{github.ref_name == 'main'}}
       #   uses: JS-DevTools/npm-publish@v1
       #   with:

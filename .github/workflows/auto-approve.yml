@@ -4,7 +4,7 @@ on: pull_request_target
 jobs:
   build:
     runs-on: ubuntu-latest
-    if: github.actor == 'dependabot[bot]' || github.actor == 'renovate[bot]' || github.actor == 'Atomic Platform'
+    if: github.actor == 'dependabot[bot]' || github.actor == 'renovate[bot]' || github.actor == 'Atomic Platform' || github.actor == 'github-actions'
     steps:
       - uses: hmarr/auto-approve-action@v3.2.1
         with:
