@@ -19,8 +19,13 @@ jobs:
           git remote -v
       - run: yarn
       - if: ${{github.ref_name == 'main'}}
-        name: version release ${{github.ref}}
-        run: yarn version --new-version patch
+        name: create release version ${{github.ref}}
+        run: |
+          echo "actor ${{github.actor}}"
+          ## do the release bump
+          git checkout -b version-$(npm pkg get version --raw)
+          yarn version --new-version patch
+          git log
       # - if: ${{github.ref_name == 'main'}}
       #   uses: JS-DevTools/npm-publish@v1
       #   with:
