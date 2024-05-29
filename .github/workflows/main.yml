@@ -23,7 +23,7 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          COMMIT_MSG=$( git show -s --format=%B ${{github.sha}} | grep "^Release version")
+          COMMIT_MSG=$(git show -s --format=%B '${{github.sha}}' | grep "^Release version")
           if [ -n "${COMMIT_MSG}" ]; then
             echo "Don't need to create version here"
             exit 0
