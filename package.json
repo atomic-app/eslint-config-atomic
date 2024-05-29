@@ -1,6 +1,6 @@
 {
   "name": "@atomic-tools/eslint-config-atomic",
-  "version": "1.4.10",
+  "version": "1.4.11",
   "main": "index.js",
   "repository": "https://github.com/atomic-app/eslint-config-atomic",
   "author": "Greg Brown",
