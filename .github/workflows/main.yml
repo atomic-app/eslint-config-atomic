@@ -23,11 +23,12 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          COMMIT_MSG=$(git show -s --format=%B '${{github.sha}}' | grep "^Release version")
-          if [ -n "${COMMIT_MSG}" ]; then
-            echo "Don't need to create version here"
-            exit 0
-          fi
+          git show -s --format=%B '${{github.sha}}' | grep "^Release version"
+          # COMMIT_MSG=$(git show -s --format=%B '${{github.sha}}' | grep "^Release version")
+          # if [ -n "${COMMIT_MSG}" ]; then
+          #   echo "Don't need to create version here"
+          #   exit 0
+          # fi
 
           BRANCH_NAME=version-release-${{github.sha}}
           git checkout -b ${BRANCH_NAME}
@@ -37,7 +38,7 @@ jobs:
           git push && git push --tags && echo 'Bumped the version'
 
           NEW_VERSION=$(jq -r '.version' package.json)
-          gh pr create -B main -H ${BRANCH_NAME} --label automerge --title "Release version ${NEW_VERSION}" --body 'Created by Github action'
+          # gh pr create -B main -H ${BRANCH_NAME} --label automerge --title "Release version ${NEW_VERSION}" --body 'Created by Github action'
       # - if: ${{github.ref_name == 'main'}} && ${{github.actor == 'kodiakhq[bot]'}}
       #   uses: JS-DevTools/npm-publish@v1
       #   with:
