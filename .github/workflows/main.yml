@@ -23,8 +23,8 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          echo "actor ${{github.actor}}"
-          if [ "${{github.actor}}" == "github-actions" ]; then
+          COMMIT_MSG=$( git show -s --format=%B ${{github.sha}} | grep "^Release version")
+          if [ -n "${COMMIT_MSG}"]; then
             echo "Don't need to create version here"
             exit 0
           fi
@@ -38,7 +38,7 @@ jobs:
 
           NEW_VERSION=$(jq -r '.version' package.json)
           gh pr create -B main -H ${BRANCH_NAME} --label automerge --title "Release version ${NEW_VERSION}" --body 'Created by Github action'
-      # - if: ${{github.ref_name == 'main'}} && ${{github.actor == 'github-actions'}}
+      # - if: ${{github.ref_name == 'main'}} && ${{github.actor == 'kodiakhq[bot]'}}
       #   uses: JS-DevTools/npm-publish@v1
       #   with:
       #     token: ${{ secrets.NPM_TOKEN }}
