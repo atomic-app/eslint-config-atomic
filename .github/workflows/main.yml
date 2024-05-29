@@ -29,7 +29,8 @@ jobs:
           git checkout -b version-${NEW_VERSION}
           git status
           git log
-          which gh
+
+          gh pr create -B main -H version-${NEW_VERSION} --title "Release version ${NEW_VERSION}" --body 'Created by Github action'
           ##git push && git push --tags && echo 'Bumped the version'
       # - if: ${{github.ref_name == 'main'}}
       #   uses: JS-DevTools/npm-publish@v1
