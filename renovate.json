@@ -25,5 +25,5 @@
   "baseBranches": ["main"],
   "ignoreDeps": [],
   "schedule": ["every weekend"],
-  "dependencyDashboard": false
+  "dependencyDashboard": true
 }
